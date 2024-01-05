@@ -1,0 +1,11 @@
+CHIP XorGate {
+    IN a, b;
+    OUT out;
+
+    PARTS:
+        Not(in=a, out=notA);
+        Not(in=b, out=notB);
+        And(a=notA, b=b, out=AandNotB);
+        And(a=a, b=notB, out=NotAandB);
+        Or(a=AandNotB, b=NotAandB, out=out);
+}
